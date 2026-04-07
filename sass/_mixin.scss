@@ -1,0 +1,14 @@
+// ミックスイン
+@mixin mq{
+    @media screen and (min-width: 768px){
+        @content;
+    }
+
+}
+
+// 使用例
+// .sample{
+// @include mq{
+// background: #000; //この部分が@contentで展開される
+// }
+// }
