@@ -1,18 +1,61 @@
-//仮にスタイル記述。あとでちゃんと書く。
-
+// ======================================
+// ボタン
+// ======================================
 .c-button {
   display: inline-block;
-  padding: 12px 24px;
-  background-color: var(--main-color);
-  color: var(--white);
-  border-radius: 4px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background-color: #e85b24;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
   text-align: center;
+  transition: all 0.3s ease;
 }
 
+.c-button:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+// ======================================
+// カード（Lineup）
+// ======================================
 .c-card {
-  background-color: var(--white);
-  border: 1px solid #ddd;
-  padding: 16px;
-  text-align: center;
+  padding: 14px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 }
 
+// ======================================
+// しずくバッジ（FV用）
+// ======================================
+.c-badge-drop {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  aspect-ratio: 1 / 1;
+
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+
+  border-radius: 100% 100% 0 100%;
+
+  background: linear-gradient(135deg, #0d6b74, #004f57);
+
+  box-shadow:
+    0 0 0 3px #0b5c63,
+    0 6px 14px rgba(0,0,0,0.18);
+}
+
+.c-badge-drop--accent {
+  background: linear-gradient(135deg, #ff7a3c, #e85b24);
+
+  box-shadow:
+    0 0 0 3px #d94c1d,
+    0 6px 14px rgba(0,0,0,0.18);
+}
