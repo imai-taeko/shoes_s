@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 72px;
+  min-height: 68px;
   position: relative;
 }
 
@@ -99,27 +99,36 @@
 // JSで .is-open を付与して表示する想定
 // ======================================
 .l-header__nav {
-  display: none;
-}
-
-.l-header__nav.is-open {
-  display: block;
   position: absolute;
   top: 100%;
+  right: -20px;
+  left: auto;
 
-  left: 10px;     /* ← 左に余白を残す */
-  right: -20px;   /* ← 右は画面いっぱいまで伸ばす */
-
+  width: min(78vw, 320px);
   min-height: calc(100dvh - 72px);
 
   padding: 24px 20px 28px;
   background-color: #efe6db;
   border-top: 1px solid var(--sub-color4);
 
-  /* 左側の段差感 */
-  box-shadow: -6px 0 12px rgba(0, 0, 0, 0.08);
+  box-shadow: -8px 0 16px rgba(0, 0, 0, 0.08);
 
-  border-radius: 6px;
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    transform 0.32s ease,
+    opacity 0.24s ease,
+    visibility 0.24s ease;
+}
+
+.l-header__nav.is-open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .l-header__nav-list {
@@ -168,7 +177,7 @@
 // ======================================
 @include mq {
   .l-header__inner {
-    min-height: 88px;
+    min-height: 68px;
   }
 
   .l-header__menu-button {
@@ -176,17 +185,21 @@
   }
 
   .l-header__nav {
-    display: block;
     position: static;
-  }
-
-  .l-header__nav.is-open {
-    display: block;
-    position: static;
+    width: auto;
+    min-height: auto;
     padding: 0;
     background-color: transparent;
     border-top: none;
     box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .l-header__nav.is-open {
+    transform: none;
   }
 
   .l-header__nav-list {

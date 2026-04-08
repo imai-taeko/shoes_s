@@ -1,4 +1,3 @@
-@charset "UTF-8";
 :root {
   /* color */
   --main-color: #005661;
@@ -68,7 +67,7 @@ ol {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 72px;
+  min-height: 68px;
   position: relative;
 }
 
@@ -129,22 +128,28 @@ ol {
 }
 
 .l-header__nav {
-  display: none;
-}
-
-.l-header__nav.is-open {
-  display: block;
   position: absolute;
   top: 100%;
-  left: 10px; /* ← 左に余白を残す */
-  right: -20px; /* ← 右は画面いっぱいまで伸ばす */
+  right: -20px;
+  left: auto;
+  width: min(78vw, 320px);
   min-height: calc(100dvh - 72px);
   padding: 24px 20px 28px;
   background-color: #efe6db;
   border-top: 1px solid var(--sub-color4);
-  /* 左側の段差感 */
-  box-shadow: -6px 0 12px rgba(0, 0, 0, 0.08);
-  border-radius: 6px;
+  box-shadow: -8px 0 16px rgba(0, 0, 0, 0.08);
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.32s ease, opacity 0.24s ease, visibility 0.24s ease;
+}
+
+.l-header__nav.is-open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .l-header__nav-list {
@@ -186,22 +191,26 @@ ol {
 
 @media screen and (min-width: 768px) {
   .l-header__inner {
-    min-height: 88px;
+    min-height: 68px;
   }
   .l-header__menu-button {
     display: none;
   }
   .l-header__nav {
-    display: block;
     position: static;
-  }
-  .l-header__nav.is-open {
-    display: block;
-    position: static;
+    width: auto;
+    min-height: auto;
     padding: 0;
     background-color: transparent;
     border-top: none;
     box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .l-header__nav.is-open {
+    transform: none;
   }
   .l-header__nav-list {
     flex-direction: row;
