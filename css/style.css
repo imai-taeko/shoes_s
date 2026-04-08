@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   /* color */
   --main-color: #005661;
@@ -135,12 +136,15 @@ ol {
   display: block;
   position: absolute;
   top: 100%;
-  right: -20px;
-  left: -20px;
+  left: 10px; /* ← 左に余白を残す */
+  right: -20px; /* ← 右は画面いっぱいまで伸ばす */
+  min-height: calc(100dvh - 72px);
   padding: 24px 20px 28px;
   background-color: #efe6db;
   border-top: 1px solid var(--sub-color4);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  /* 左側の段差感 */
+  box-shadow: -6px 0 12px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
 }
 
 .l-header__nav-list {
