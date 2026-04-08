@@ -36,10 +36,12 @@
   display: grid;
   place-items: center;
   width: 120px;
+  letter-spacing: 0.1em;
   aspect-ratio: 1 / 1;
 
   color: #fff;
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 1.4rem;
   text-align: center;
   line-height: 1.4;
 
@@ -52,8 +54,10 @@
     0 6px 14px rgba(0,0,0,0.18);
 }
 
+
 .c-badge-drop--accent {
   background: linear-gradient(135deg, #ff7a3c, #e85b24);
+  font-size: 1.25rem;
 
   box-shadow:
     0 0 0 3px #d94c1d,
