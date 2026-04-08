@@ -246,7 +246,7 @@ ol {
   font-weight: 700;
   text-decoration: none;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .c-button:hover {
@@ -264,25 +264,36 @@ ol {
 .c-badge-drop {
   display: grid;
   place-items: center;
-  width: 120px;
-  letter-spacing: 0.1em;
+  width: 92px;
   aspect-ratio: 1/1;
+  letter-spacing: 0.08em;
   color: #fff;
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.35;
   border-radius: 100% 100% 0 100%;
   background: linear-gradient(135deg, #0d6b74, #004f57);
   box-shadow: 0 0 0 3px #0b5c63, 0 6px 14px rgba(0, 0, 0, 0.18);
 }
 
 .c-badge-drop--accent {
+  font-size: 1.05rem;
   background: linear-gradient(135deg, #ff7a3c, #e85b24);
-  font-size: 1.25rem;
   box-shadow: 0 0 0 3px #d94c1d, 0 6px 14px rgba(0, 0, 0, 0.18);
 }
 
+@media screen and (min-width: 768px) {
+  .c-badge-drop {
+    width: 120px;
+    letter-spacing: 0.1em;
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+  .c-badge-drop--accent {
+    font-size: 1.25rem;
+  }
+}
 .p-band img {
   display: block;
   width: 100%;
@@ -290,48 +301,78 @@ ol {
 }
 
 .p-fv {
-  padding: 16px 0 28px;
+  padding: 0 0 28px;
   background-color: #f5f2ec;
+}
+
+.p-fv .l-container {
+  padding: 0;
+  max-width: none;
 }
 
 .p-fv__inner {
   position: relative;
+  min-height: 560px;
 }
 
 .p-fv__body {
-  margin-bottom: 18px;
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  right: 16px;
+  z-index: 10;
+  margin-bottom: 0;
 }
 
 .p-fv__title {
   margin: 0;
-  font-size: 2.6rem;
+  color: #222;
+  font-size: 2.2rem;
   font-weight: 800;
-  line-height: 1.4;
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  line-height: 1.35;
+  text-shadow: -1.4px 0 0 #fff, 1.4px 0 0 #fff, 0 -1.4px 0 #fff, 0 1.4px 0 #fff, 0 0 2px #fff, 0 3px 8px rgba(0, 0, 0, 0.16);
 }
 
 .p-fv__lead {
-  margin-top: 14px;
+  margin-top: 18px;
   color: #006b78;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 1.5;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
 }
 
 .p-fv__image {
-  text-align: center;
+  height: 100%;
 }
 
 .p-fv__image img {
   display: block;
-  width: min(88%, 900px);
-  margin: 0 auto;
+  width: 100%;
+  height: 560px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .p-fv__points {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  z-index: 20;
   display: flex;
+  justify-content: center;
+  align-items: flex-end;
   gap: 8px;
-  margin-top: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.p-fv__point {
+  margin-left: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -343,42 +384,44 @@ ol {
     padding-bottom: 100px;
   }
   .p-fv__body {
-    position: absolute;
     top: 20px;
     left: 40px;
-    z-index: 10;
+    right: auto;
     max-width: 760px;
-    margin-bottom: 0;
   }
   .p-fv__title {
     font-size: clamp(2.4rem, 2.2vw, 3.8rem);
     white-space: nowrap;
     line-height: 1.4;
-    color: #222;
     text-shadow: -1.8px 0 0 #fff, 1.8px 0 0 #fff, 0 -1.8px 0 #fff, 0 1.8px 0 #fff, 0 0 3px #fff, 0 4px 10px rgba(0, 0, 0, 0.16);
   }
   .p-fv__lead {
-    font-size: 1.8rem;
     margin-top: 28px;
+    font-size: 1.8rem;
+    line-height: 1.6;
     text-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
+  }
+  .p-fv__image {
+    text-align: center;
+    height: auto;
   }
   .p-fv__image img {
     width: min(88%, 900px);
+    height: auto;
     margin: 0 auto;
+    -o-object-fit: initial;
+       object-fit: initial;
   }
   .p-fv__points {
-    position: absolute;
-    left: 70px;
-    bottom: 90px;
-    z-index: 20;
-    gap: 0;
-    margin: 0;
+    left: 46px;
+    right: auto;
+    bottom: 60px;
+    justify-content: flex-start;
+    gap: 6px;
   }
-  .p-fv__point {
-    margin-left: 2px;
-  }
-  .p-fv__point:first-child {
-    margin-left: 0;
+  .p-fv .l-container {
+    padding: 0 20px;
+    max-width: 1200px;
   }
 }
 .p-intro__inner {

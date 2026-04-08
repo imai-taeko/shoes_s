@@ -1,3 +1,5 @@
+@use "mixin" as *;
+
 // ======================================
 // ボタン
 // ======================================
@@ -11,7 +13,9 @@
   font-weight: 700;
   text-decoration: none;
   text-align: center;
-  transition: all 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .c-button:hover {
@@ -26,40 +30,55 @@
   padding: 14px;
   background-color: #fff;
   border-radius: 6px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
 // ======================================
 // しずくバッジ（FV用）
+// SP基本
 // ======================================
 .c-badge-drop {
   display: grid;
   place-items: center;
-  width: 120px;
-  letter-spacing: 0.1em;
+  width: 92px;
   aspect-ratio: 1 / 1;
+  letter-spacing: 0.08em;
 
   color: #fff;
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.35;
 
   border-radius: 100% 100% 0 100%;
-
   background: linear-gradient(135deg, #0d6b74, #004f57);
 
   box-shadow:
     0 0 0 3px #0b5c63,
-    0 6px 14px rgba(0,0,0,0.18);
+    0 6px 14px rgba(0, 0, 0, 0.18);
 }
 
-
 .c-badge-drop--accent {
+  font-size: 1.05rem;
   background: linear-gradient(135deg, #ff7a3c, #e85b24);
-  font-size: 1.25rem;
 
   box-shadow:
     0 0 0 3px #d94c1d,
-    0 6px 14px rgba(0,0,0,0.18);
+    0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+// ======================================
+// PCのときのしずくバッジ
+// ======================================
+@include mq {
+  .c-badge-drop {
+    width: 120px;
+    letter-spacing: 0.1em;
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  .c-badge-drop--accent {
+    font-size: 1.25rem;
+  }
 }

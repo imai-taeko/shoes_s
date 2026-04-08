@@ -13,54 +13,82 @@
 // FV
 // ======================================
 .p-fv {
-  padding: 16px 0 28px;
+  padding: 0 0 28px;
   background-color: #f5f2ec;
+}
+
+.p-fv .l-container {
+  padding: 0;
+  max-width: none;
 }
 
 .p-fv__inner {
   position: relative;
+  min-height: 560px;
 }
 
 .p-fv__body {
-  margin-bottom: 18px;
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  right: 16px;
+  z-index: 10;
+  margin-bottom: 0;
 }
 
 .p-fv__title {
   margin: 0;
-  font-size: 2.6rem;
+  color: #222;
+  font-size: 2.2rem;
   font-weight: 800;
-  line-height: 1.4;
+  line-height: 1.35;
   text-shadow:
-    -1px -1px 0 #fff,
-     1px -1px 0 #fff,
-    -1px  1px 0 #fff,
-     1px  1px 0 #fff;
+    -1.4px 0 0 #fff,
+    1.4px 0 0 #fff,
+    0 -1.4px 0 #fff,
+    0 1.4px 0 #fff,
+    0 0 2px #fff,
+    0 3px 8px rgba(0, 0, 0, 0.16);
 }
 
 .p-fv__lead {
-  margin-top: 14px;
+  margin-top: 18px;
   color: #006b78;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  line-height: 1.6;
+  line-height: 1.5;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
 }
 
-
-
 .p-fv__image {
-  text-align: center;
+  height: 100%;
 }
 
 .p-fv__image img {
   display: block;
-  width: min(88%, 900px);
-  margin: 0 auto;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .p-fv__points {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  z-index: 20;
   display: flex;
+  justify-content: center;
+  align-items: flex-end;
   gap: 8px;
-  margin-top: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.p-fv__point {
+  margin-left: 0;
 }
 
 @include mq {
@@ -74,262 +102,263 @@
   }
 
   .p-fv__body {
-    position: absolute;
     top: 20px;
     left: 40px;
-    z-index: 10;
+    right: auto;
     max-width: 760px;
-    margin-bottom: 0;
   }
 
   .p-fv__title {
     font-size: clamp(2.4rem, 2.2vw, 3.8rem);
     white-space: nowrap;
     line-height: 1.4;
-    color: #222;
-
     text-shadow:
       -1.8px 0 0 #fff,
-       1.8px 0 0 #fff,
-       0 -1.8px 0 #fff,
-       0  1.8px 0 #fff,
-       0 0 3px #fff,
-       0 4px 10px rgba(0,0,0,0.16);
+      1.8px 0 0 #fff,
+      0 -1.8px 0 #fff,
+      0 1.8px 0 #fff,
+      0 0 3px #fff,
+      0 4px 10px rgba(0, 0, 0, 0.16);
   }
 
   .p-fv__lead {
+    margin-top: 28px;
     font-size: 1.8rem;
-    margin-top: 28px; // ←ここに統合
-    text-shadow: 0 0 4px rgba(255,255,255,0.9);
+    line-height: 1.6;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
+  }
+
+  .p-fv__image {
+    text-align: center;
+    height: auto;
   }
 
   .p-fv__image img {
     width: min(88%, 900px);
+    height: auto;
     margin: 0 auto;
+    object-fit: initial;
   }
 
   .p-fv__points {
-    position: absolute;
-    left: 70px;
-    bottom: 90px;
-    z-index: 20;
-    gap: 0;
-    margin: 0;
+    left: 46px;
+    right: auto;
+    bottom: 60px;
+    justify-content: flex-start;
+    gap: 6px;
   }
 
-  .p-fv__point {
-    margin-left: 2px;
+  .p-fv .l-container {
+    padding: 0 20px;
+    max-width: 1200px;
   }
 
-  .p-fv__point:first-child {
-    margin-left: 0;
-  }
 }
 
-  // ======================================
-  // Intro
-  // ======================================
+// ======================================
+// Intro
+// ======================================
+.p-intro__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.p-intro__title {
+  font-size: 2.4rem;
+  color: #006b78;
+  line-height: 1.5;
+}
+
+.p-intro__text {
+  font-size: 1.5rem;
+  line-height: 1.9;
+}
+
+@include mq {
   .p-intro__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
   }
 
   .p-intro__title {
-    font-size: 2.4rem;
-    color: #006b78;
-    line-height: 1.5;
+    font-size: 3rem;
   }
 
   .p-intro__text {
-    font-size: 1.5rem;
-    line-height: 1.9;
+    font-size: 1.6rem;
   }
+}
 
-  @include mq {
-    .p-intro__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
+// ======================================
+// About
+// ======================================
+.p-about {
+  background: #f3efe8;
+}
 
-    .p-intro__title {
-      font-size: 3rem;
-    }
+.p-about__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
-    .p-intro__text {
-      font-size: 1.6rem;
-    }
-  }
+.p-about__title {
+  font-size: 2.4rem;
+}
 
-  // ======================================
-  // About
-  // ======================================
-  .p-about {
-    background: #f3efe8;
-  }
+.p-about__text {
+  font-size: 1.5rem;
+  line-height: 2;
+}
 
+@include mq {
   .p-about__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
   }
 
   .p-about__title {
-    font-size: 2.4rem;
+    font-size: 3rem;
   }
+}
 
-  .p-about__text {
-    font-size: 1.5rem;
-    line-height: 2;
-  }
+// ======================================
+// Feature
+// ======================================
+.p-feature__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
-  @include mq {
-    .p-about__inner {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-    }
+.p-feature__images {
+  display: grid;
+  gap: 16px;
+}
 
-    .p-about__title {
-      font-size: 3rem;
-    }
-  }
+.p-feature__title {
+  font-size: 2.4rem;
+}
 
-  // ======================================
-  // Feature
-  // ======================================
+.p-feature__text {
+  font-size: 1.5rem;
+  line-height: 2;
+}
+
+@include mq {
   .p-feature__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .p-feature__images {
     display: grid;
-    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
   }
 
   .p-feature__title {
-    font-size: 2.4rem;
+    font-size: 3rem;
   }
+}
 
-  .p-feature__text {
-    font-size: 1.5rem;
-    line-height: 2;
-  }
+// ======================================
+// Lineup
+// ======================================
+.p-lineup {
+  background: #f3efe8;
+}
 
-  @include mq {
-    .p-feature__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-    }
+.p-lineup__heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
 
-    .p-feature__title {
-      font-size: 3rem;
-    }
-  }
+.p-lineup__title {
+  font-size: 2.4rem;
+}
 
-  // ======================================
-  // Lineup
-  // ======================================
-  .p-lineup {
-    background: #f3efe8;
-  }
+.p-lineup__lead {
+  font-size: 1.5rem;
+}
 
-  .p-lineup__heading {
-    text-align: center;
-    margin-bottom: 32px;
-  }
+.p-lineup__style-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
+.p-lineup__style-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.p-lineup__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@include mq {
   .p-lineup__title {
-    font-size: 2.4rem;
-  }
-
-  .p-lineup__lead {
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
 
   .p-lineup__style-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .p-lineup__style-images {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: 1fr 140px 1fr;
+    gap: 30px;
+    align-items: center;
   }
 
   .p-lineup__cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
   }
+}
 
-  @include mq {
-    .p-lineup__title {
-      font-size: 3rem;
-    }
+// ======================================
+// FAQ
+// ======================================
+.p-faq__title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 24px;
+}
 
-    .p-lineup__style-grid {
-      display: grid;
-      grid-template-columns: 1fr 140px 1fr;
-      gap: 30px;
-      align-items: center;
-    }
+.p-faq__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-    .p-lineup__cards {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-  }
+.p-faq__item {
+  background: #f3efe8;
+  padding: 20px;
+}
 
-  // ======================================
-  // FAQ
-  // ======================================
+.p-faq__item-title {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+@include mq {
   .p-faq__title {
-    text-align: center;
-    font-size: 2.4rem;
-    margin-bottom: 24px;
+    font-size: 3rem;
+    margin-bottom: 40px;
   }
 
   .p-faq__grid {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 
   .p-faq__item {
-    background: #f3efe8;
-    padding: 20px;
+    padding: 28px;
   }
 
   .p-faq__item-title {
-    font-size: 1.6rem;
-    margin-bottom: 8px;
+    font-size: 1.8rem;
   }
-
-  @include mq {
-    .p-faq__title {
-      font-size: 3rem;
-      margin-bottom: 40px;
-    }
-
-    .p-faq__grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .p-faq__item {
-      padding: 28px;
-    }
-
-    .p-faq__item-title {
-      font-size: 1.8rem;
-    }
-  }
+}
