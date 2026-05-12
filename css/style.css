@@ -1056,17 +1056,18 @@ ol {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 210px;
-  padding: 18px 8px 16px;
+  justify-content: center;
+  min-height: 185px;
+  padding: 12px 8px 12px;
   text-align: center;
 }
 
 .p-lineup__card img {
   display: block;
   width: 100%;
-  max-width: 260px;
-  height: 150px;
-  margin: 0 auto 8px;
+  max-width: 220px;
+  height: 105px;
+  margin: 0 auto 6px;
   -o-object-fit: contain;
      object-fit: contain;
 }
