@@ -1288,15 +1288,19 @@ ol {
     content: "";
     position: absolute;
     left: 0;
+    right: auto;
     z-index: 0;
     width: 100%;
     height: 44px;
     background: linear-gradient(90deg, rgba(235, 226, 215, 0) 0%, rgb(235, 226, 215) 8%, rgb(235, 226, 215) 92%, rgba(235, 226, 215, 0) 100%);
+    transform: none;
   }
   .p-lineup__cards::before {
     top: 86px;
+    bottom: auto;
   }
   .p-lineup__cards::after {
+    top: auto;
     bottom: 86px;
   }
   .p-lineup__card {
