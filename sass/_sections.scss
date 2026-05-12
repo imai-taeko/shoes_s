@@ -490,7 +490,7 @@
 // ======================================
 
 .p-lineup {
-  background: #f7f4ef;
+  background: #fff;
 }
 
 //
@@ -775,12 +775,7 @@
 
 @include mq {
 
-  .p-lineup {
-    background:
-      linear-gradient(180deg,
-        #f7f4ef 0%,
-        #ffffff 100%);
-  }
+  
 
   //
   // PC側：見出し
@@ -889,7 +884,7 @@
     position: relative;
     z-index: 3;
 
-    background-color: #f7f4ef;
+    background-color: #fff;
   }
 
   .p-lineup__style-label {
@@ -952,7 +947,7 @@
     width: 118px;
     padding: 12px;
 
-    background-color: #f7f4ef;
+    background-color: #fff;
   }
 
   //

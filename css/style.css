@@ -731,7 +731,7 @@ ol {
   }
 }
 .p-lineup {
-  background: #f7f4ef;
+  background: #fff;
 }
 
 .p-lineup__heading {
@@ -954,9 +954,6 @@ ol {
 }
 
 @media screen and (min-width: 768px) {
-  .p-lineup {
-    background: linear-gradient(180deg, #f7f4ef 0%, #ffffff 100%);
-  }
   .p-lineup__heading {
     margin-bottom: 54px;
   }
@@ -1024,7 +1021,7 @@ ol {
   .p-lineup__style-text {
     position: relative;
     z-index: 3;
-    background-color: #f7f4ef;
+    background-color: #fff;
   }
   .p-lineup__style-label {
     color: #e85b24;
@@ -1067,7 +1064,7 @@ ol {
   .p-lineup__logo img {
     width: 118px;
     padding: 12px;
-    background-color: #f7f4ef;
+    background-color: #fff;
   }
   .p-lineup__style-group:last-child .p-lineup__style-slider {
     grid-column: 3;
