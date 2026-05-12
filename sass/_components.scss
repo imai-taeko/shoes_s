@@ -34,6 +34,48 @@
   transform: none;
 }
 
+.c-button--official {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-width: 220px;
+  padding: 16px 24px;
+
+  border-radius: 8px;
+
+  font-weight: 500;
+  line-height: 1;
+}
+
+.c-button--official::after {
+  content: ">";
+
+  margin-left: 2px;
+
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+.c-button--official:hover::after {
+  transform: translateX(4px);
+}
+
+.c-button--official__small {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.c-button--official__main {
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
 // ======================================
 // カード（Lineup）
 // ======================================
