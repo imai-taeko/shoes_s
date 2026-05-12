@@ -8,9 +8,14 @@
   --sub-color3: #d6d6d6;
   --sub-color4: #e5e5e5;
   --text-color: #333333;
+  /* layout */
+  --container-width: 1120px;
+  --section-padding-pc: 88px;
+  --section-padding-sp: 56px;
   /* font */
   --font-family-ja: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
   --font-family-heading: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+  /* grid */
   --col-width: 5.4;
   --col-gap: 3.2;
 }
@@ -21,11 +26,15 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   font-family: var(--font-family-ja);
   color: var(--text-color);
-  background-color: var(--base-color);
+  background-color: #fff;
   line-height: 1.6;
 }
 
@@ -165,7 +174,7 @@ ol {
   color: var(--text-color);
   font-family: var(--font-family-heading);
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   line-height: 1.4;
   letter-spacing: 0.04em;
   text-decoration: none;
@@ -220,6 +229,9 @@ ol {
   .l-header__logo img {
     height: 40px;
   }
+  .l-header__nav-list a {
+    font-size: 1.5rem;
+  }
 }
 .l-footer {
   padding: 30px 0;
@@ -269,7 +281,7 @@ ol {
   letter-spacing: 0.08em;
   color: #fff;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   text-align: center;
   line-height: 1.35;
   border-radius: 100% 100% 0 100%;
@@ -278,7 +290,7 @@ ol {
 }
 
 .c-badge-drop--accent {
-  font-size: 1.05rem;
+  font-size: 1.5rem;
   background: linear-gradient(135deg, #ff7a3c, #e85b24);
   box-shadow: 0 0 0 3px #d94c1d, 0 6px 14px rgba(0, 0, 0, 0.18);
 }
@@ -287,11 +299,11 @@ ol {
   .c-badge-drop {
     width: 120px;
     letter-spacing: 0.1em;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     line-height: 1.4;
   }
   .c-badge-drop--accent {
-    font-size: 1.25rem;
+    font-size: 1.7rem;
   }
 }
 .p-band img {
@@ -301,8 +313,8 @@ ol {
 }
 
 .p-fv {
-  padding: 0 0 28px;
-  background-color: #f5f2ec;
+  padding: 0 0 8px;
+  background: linear-gradient(180deg, #e2d4c5 0%, #f6f2ed 38%, #faf7f3 52%, #f3eee7 100%);
 }
 
 .p-fv .l-container {
@@ -377,11 +389,11 @@ ol {
 
 @media screen and (min-width: 768px) {
   .p-fv {
-    padding: 24px 0 40px;
+    padding: 24px 0 16px;
   }
   .p-fv__inner {
-    min-height: 520px;
-    padding-bottom: 100px;
+    min-height: auto;
+    padding-bottom: 64px;
   }
   .p-fv__body {
     top: 20px;
@@ -424,16 +436,35 @@ ol {
     max-width: 1200px;
   }
 }
+.p-intro {
+  background-color: #fff;
+  padding-top: 40px;
+}
+
 .p-intro__inner {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
+.p-intro__body {
+  order: 1;
+}
+
+.p-intro__image {
+  order: 2;
+}
+
+.p-intro__image img {
+  border-radius: 8px;
+}
+
 .p-intro__title {
+  margin: 0 0 24px;
+  color: #3a332d;
   font-size: 2.4rem;
-  color: #006b78;
-  line-height: 1.5;
+  font-weight: 800;
+  line-height: 1.55;
 }
 
 .p-intro__text {
@@ -442,11 +473,20 @@ ol {
 }
 
 @media screen and (min-width: 768px) {
+  .p-intro {
+    padding-top: 56px;
+  }
   .p-intro__inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .p-intro__image {
+    order: initial;
+  }
+  .p-intro__body {
+    order: initial;
   }
   .p-intro__title {
     font-size: 3rem;
@@ -484,6 +524,10 @@ ol {
     font-size: 3rem;
   }
 }
+.p-feature {
+  background-color: #f7f4ef;
+}
+
 .p-feature__inner {
   display: flex;
   flex-direction: column;
@@ -515,7 +559,7 @@ ol {
   }
 }
 .p-lineup {
-  background: #f3efe8;
+  background: #fff;
 }
 
 .p-lineup__heading {
@@ -564,6 +608,10 @@ ol {
     gap: 24px;
   }
 }
+.p-faq {
+  background-color: #f3efe8;
+}
+
 .p-faq__title {
   text-align: center;
   font-size: 2.4rem;

@@ -1,18 +1,24 @@
 :root {
-    /* color */
-    --main-color: #005661;
-    --accent-color: #da4a20;
-    --base-color: #f8f2ed;
-    --sub-color1: #efe6da;
-    --sub-color2: #ffffff;
-    --sub-color3: #d6d6d6;
-    --sub-color4: #e5e5e5;
-    --text-color: #333333;
+  /* color */
+  --main-color: #005661;
+  --accent-color: #da4a20;
+  --base-color: #f8f2ed;
+  --sub-color1: #efe6da;
+  --sub-color2: #ffffff;
+  --sub-color3: #d6d6d6;
+  --sub-color4: #e5e5e5;
+  --text-color: #333333;
 
-    /* font */
-    --font-family-ja: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
-    --font-family-heading: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+  /* layout */
+  --container-width: 1120px;
+  --section-padding-pc: 88px;
+  --section-padding-sp: 56px;
 
-    --col-width: 5.4;
-    --col-gap: 3.2;
+  /* font */
+  --font-family-ja: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+  --font-family-heading: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+
+  /* grid */
+  --col-width: 5.4;
+  --col-gap: 3.2;
 }

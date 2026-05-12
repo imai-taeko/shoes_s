@@ -13,8 +13,17 @@
 // FV
 // ======================================
 .p-fv {
-  padding: 0 0 28px;
-  background-color: #f5f2ec;
+  padding: 0 0 8px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #e2d4c5 0%,
+      #f6f2ed 38%,
+      #faf7f3 52%,
+      #f3eee7 100%
+    );
+
 }
 
 .p-fv .l-container {
@@ -93,12 +102,12 @@
 
 @include mq {
   .p-fv {
-    padding: 24px 0 40px;
+    padding: 24px 0 16px;
   }
 
   .p-fv__inner {
-    min-height: 520px;
-    padding-bottom: 100px;
+    min-height: auto;
+    padding-bottom: 64px;
   }
 
   .p-fv__body {
@@ -158,16 +167,36 @@
 // ======================================
 // Intro
 // ======================================
+
+.p-intro {
+  background-color: #fff;
+  padding-top: 40px;
+}
+
 .p-intro__inner {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
+.p-intro__body {
+  order: 1;
+}
+
+.p-intro__image {
+  order: 2;
+}
+
+.p-intro__image img {
+  border-radius: 8px;
+}
+
 .p-intro__title {
+  margin: 0 0 24px;
+  color: #3a332d;
   font-size: 2.4rem;
-  color: #006b78;
-  line-height: 1.5;
+  font-weight: 800;
+  line-height: 1.55;
 }
 
 .p-intro__text {
@@ -176,11 +205,24 @@
 }
 
 @include mq {
+
+  .p-intro {
+    padding-top: 56px;
+  }
+
   .p-intro__inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .p-intro__image {
+    order: initial;
+  }
+
+  .p-intro__body {
+    order: initial;
   }
 
   .p-intro__title {
@@ -229,6 +271,11 @@
 // ======================================
 // Feature
 // ======================================
+
+.p-feature {
+  background-color: #f7f4ef;
+}
+
 .p-feature__inner {
   display: flex;
   flex-direction: column;
@@ -265,7 +312,7 @@
 // Lineup
 // ======================================
 .p-lineup {
-  background: #f3efe8;
+  background: #fff;
 }
 
 .p-lineup__heading {
@@ -320,6 +367,11 @@
 // ======================================
 // FAQ
 // ======================================
+
+.p-faq {
+  background-color: #f3efe8;
+}
+
 .p-faq__title {
   text-align: center;
   font-size: 2.4rem;
